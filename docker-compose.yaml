@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  apache-php:
+    build: . 
+    ports:
+      - "8093:80"
+    volumes:
+      - /home/djilali/app/medias/:/var/www/html/
+      - /home/djilali/docker/apache-php/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
+    restart: always
